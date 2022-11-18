@@ -1,0 +1,17 @@
+package main
+
+import (
+    "fmt"
+    "net/url"
+    "os"
+    "bufio"
+)
+
+func main() {
+   scanner := bufio.NewScanner(os.Stdin)
+   for scanner.Scan(){
+	toEncode:=scanner.Text()
+	encodedValue:=url.QueryEscape(toEncode)
+	fmt.Println(encodedValue);
+	  }
+}
